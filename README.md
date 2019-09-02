@@ -13,4 +13,4 @@ There are two ways to get involved:
 
 👉 Nominate your paper: let other people reproduce your paper!
 
-👉 On the day
+👉 On the day: join the Reproducibility Hackathon
