@@ -1,6 +1,6 @@
 # ReproHack
 
-📅 30 November 2019
+📅 30th November, 2019
 🌍 Leiden, the Netherlands
 
 We are all excited by the progress made by many authors to make their papers reproducible by publishing associated code and data.
