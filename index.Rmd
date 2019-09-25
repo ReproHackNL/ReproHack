@@ -14,10 +14,8 @@ params:
   latitude: 52.157305
   longitude: 4.481427
   registration_url: https://www.eventbrite.co.uk/e/reprohack-nl-tickets-73258469053
-  hackpad_url: https://hackmd.io/link-to-copy-of-hackpad/edit
-  submission_url: https://link-to-submissionform
+  submission_url: https://docs.google.com/forms/d/1BwCNsO5FFp_n9eYJJcujmQ1YdJKYp-5gIqL4zH0u3H8/edit
   reprohack_repo_url: https://github.com/ReproHackNL/ReproHack
-  submission_form_title: ReproHack Paper Submission Form - your event
 ---
 ```{r, echo=FALSE}
 openstreetmaps_location_url <- paste0("https://www.openstreetmap.org/?mlat=",
@@ -93,12 +91,12 @@ An appreciation that reproducibility has community value beyond just the validat
 ```{r, echo=FALSE}
 library("shiny")
  wellPanel(a("Register", class = "btn btn-primary btn-md",
-          href = params$submission_url))
+          href = params$registration_url))
 ```
 
 ### **Propose a paper &#x1F4DC;**
 
-##### Click [here](submission_url) to nominate your paper!
+##### Click [here](https://docs.google.com/forms/d/1BwCNsO5FFp_n9eYJJcujmQ1YdJKYp-5gIqL4zH0u3H8/edit) to nominate your paper!
 
 _You've put a lot of effort into making your work reproducible. Now let people learn from and engage with it!_
 
@@ -125,74 +123,65 @@ library("shiny")
 ***
 ###### **Proposed papers:**
 
-<!-- <br> -->
+<br>
 
-<!-- ```{r, echo=FALSE, message=FALSE, warning=FALSE, eval=require('googlesheets')} -->
-<!-- library(googlesheets) -->
-<!-- ``` -->
+```{r, echo=FALSE, message=FALSE, warning=FALSE, eval=require('googlesheets')}
+library(googlesheets)
+```
 
-<!-- ```{r, echo=FALSE} -->
-<!-- print_contact_links <- function(responses, i){ -->
-<!--   row <- responses[i, ] -->
-<!--   twitter <- if(!is.na(row[,"Twitter handle (optional)"])){ -->
-<!--   twitter_url <- paste0("https://twitter.com/", gsub(" *@ *", "", row[,"Twitter handle (optional)"])) -->
-<!--   paste0("[<i class='fa fa-twitter'/>](", twitter_url,")")}else{NULL} -->
+```{r, echo=FALSE}
+print_contact_links <- function(responses, i){
+  row <- responses[i, ]
+  twitter <- if(!is.na(row[,"Twitter handle"])){
+  twitter_url <- paste0("https://twitter.com/", gsub(" *@ *", "", row[,"Twitter handle"]))
+  paste0("[<i class='fa fa-twitter'/>](", twitter_url,")")}else{NULL}
 
-<!--   github <- if(!is.na(row[,"GitHub username (optional)"])){ -->
-<!--   github_url <- paste0("https://github.com/", gsub(" *@ *", "", row[,"GitHub username (optional)"])) -->
-<!--   paste0("[<i class='fa fa-github'/>](", github_url,")")}else{NULL} -->
+  github <- if(!is.na(row[,"GitHub username"])){
+  github_url <- paste0("https://github.com/", gsub(" *@ *", "", row[,"GitHub username"]))
+  paste0("[<i class='fa fa-github'/>](", github_url,")")}else{NULL}
 
-<!--   feedback <- if(row[, "Would you like to receive a copy of any feedback on the paper?"] == "Yes"){ -->
-<!--     "<i class='fa fa-comment-dots'/>"}else{NULL} -->
-<!--   public <- if(row[,"Can feedback on your paper be made public?"] == "Yes"){ -->
-<!--     "<i class='fa fa-globe'/>"}else{NULL} -->
+  feedback <- if(row[, "Would you like to receive a copy of any feedback on the paper?"] == "Yes"){
+    "<i class='fa fa-comment-dots'/>"}else{NULL}
+  public <- if(row[,"Can feedback on your paper be made public?"] == "Yes"){
+    "<i class='fa fa-globe'/>"}else{NULL}
 
-<!--   return(paste(twitter, github, feedback, public)) -->
-<!-- } -->
-<!-- ``` -->
+  return(paste(twitter, github, feedback, public))
+}
+```
 
+```{r, message=FALSE, results='asis', warning=FALSE,  echo=FALSE}
 
-<!-- ```{r, message=FALSE, results='asis', warning=FALSE,  echo=FALSE} -->
-<!-- responses_gs <- gs_title(paste(params$submission_form_title, "(Responses)")) -->
-<!-- responses <- gs_read(responses_gs) -->
+responses_gs <- gs_title("ReproHackNL: Propose a paper to reproduce (Responses)")
+responses <- gs_read(responses_gs)
 
-<!-- if(nrow(responses) > 0){ -->
+if(nrow(responses) > 0){
 
-<!-- for(i in 1:nrow(responses)){ -->
-<!--     cat('\n')      -->
-<!--     cat('\n') -->
-<!--     cat('\n') -->
-<!--     cat("### **", i,". ", as.character(responses[i, "Paper title"]), "**", "\n", "\n", sep = "") -->
-<!--     cat("**", gsub("\n", "", gsub("[*]", "", as.character(responses[i, "Paper citation"]))), "\n**", "\n", "\n", sep = "") -->
-<!--     cat("##### *submitted by ", as.character(responses[i, "Name"]),  print_contact_links(responses, i), "*", "\n") -->
-<!--     cat('\n') -->
-<!--     cat('\n') -->
-<!--     cat("**Why should we attempt to reproduce this paper?**", "\n", "\n") -->
-<!--     cat(as.character(responses[i, "Why should we attempt to reproduce this paper?"]), "\n") -->
-<!--     cat('\n') -->
-<!--     cat("**Paper URL:** [", as.character(responses[i, "Paper URL"]),"](",as.character(responses[i, "Paper URL"]) ,")", "\n") -->
-<!--     cat('\n') -->
-<!--     cat("**Data URL:**", as.character(responses[i, "Data URL"]), "\n") -->
-<!--     cat('\n') -->
-<!--     cat("**Code URL:**", as.character(responses[i, "Code URL"]), "\n") -->
-<!--     cat('\n', "\n") -->
-<!--     cat("**Useful programming skills:**", as.character(responses[i, "Useful programming skills"]), "\n") -->
-<!--     cat('\n', "\n",'\n') -->
-<!-- } -->
+for(i in 1:nrow(responses)){
+    cat('\n')
+    cat('\n')
+    cat('\n')
+    cat("###### **", i,". ", as.character(responses[i, "Paper title"]), "**", "\n", "\n", sep = "")
+    cat("**", gsub("\n", "", gsub("[*]", "", as.character(responses[i, "Paper citation"]))), "\n**", "\n", "\n", sep = "")
+    cat("####### *submitted by ", as.character(responses[i, "Name"]),  print_contact_links(responses, i), "*", "\n")
+    cat('\n')
+    cat('\n')
+    cat("**Why should we attempt to reproduce this paper?**", "\n", "\n")
+    cat(as.character(responses[i, "Why should we attempt to reproduce this paper?"]), "\n")
+    cat('\n')
+    cat("**Paper URL:** [", as.character(responses[i, "Paper URL"]),"](",as.character(responses[i, "Paper URL"]) ,")", "\n")
+    cat('\n')
+    cat("**Data URL:**", as.character(responses[i, "Data URL"]), "\n")
+    cat('\n')
+    cat("**Code URL:**", as.character(responses[i, "Code URL"]), "\n")
+    cat('\n', "\n")
+    cat("**Useful programming skills:**", as.character(responses[i, "Useful programming skills"]), "\n")
+    cat('\n', "\n",'\n')
+}
 
-<!-- } -->
-<!-- ``` -->
+}
+```
 
-
-
-<!-- ```{r, echo=FALSE} -->
-<!--  wellPanel(a("Refresh proposal list", class = "btn btn-primary btn-md", -->
-<!--           href = "javascript:history.go(0)")) -->
-<!-- ``` -->
-
-
-
-<!-- *** -->
+***
 
 
 
