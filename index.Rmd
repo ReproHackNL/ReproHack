@@ -194,7 +194,7 @@ for(i in 1:nrow(responses)){
 
 
 
-### **Program for the event &#x1F4C5;**
+### **Program &#x1F4C5;**
 
 10:00 Coffee and Tea &#x2615;
 
