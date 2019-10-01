@@ -93,6 +93,8 @@ library("shiny")
  wellPanel(a("Register", class = "btn btn-primary btn-md",
           href = params$registration_url))
 ```
+***
+
 
 ### **Propose a paper &#x1F4DC;**
 
@@ -120,7 +122,6 @@ library("shiny")
           href = params$submission_url))
 ```
 
-***
 ###### **Proposed papers:**
 
 <br>
@@ -192,3 +193,25 @@ for(i in 1:nrow(responses)){
 
 
 
+
+### **Program for the event &#x1F4C5;**
+
+10:00 Coffee and Tea &#x2615;
+
+10:30 Welcome
+
+10:40 Presentation about tools for Reproducible Research by [Dr. Anna Krystalli](https://github.com/annakrystalli)
+
+11:30 Forming groups and start hackathon &#x1F468;&#x1F3FB;&#x200D;&#x1F4BB;
+&#x1F468;&#x1F3FC;&#x200D;&#x1F4BB;
+
+12:30 Lunch buffet &#x1F957; &#x1F959;
+
+14:30 2nd presentation (tbc)
+
+15:00 Continue hacking &#x1F468;&#x1F3FD;&#x200D;&#x1F4BB;&#x1F469;&#x1F3FC;&#x200D;&#x1F4BB;
+
+
+
+
+16:30 Drinks and bites &#x1F37B;
