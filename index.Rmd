@@ -200,7 +200,7 @@ for(i in 1:nrow(responses)){
 
 10:30 Welcome
 
-10:40 Presentation about tools for Reproducible Research by [Dr. Anna Krystalli](https://github.com/annakrystalli)
+10:40 Presentation about tools for Reproducible Research by [Dr. Anna Krystalli](http://www.annakrystalli.com/)
 
 11:30 Forming groups and start hackathon &#x1F468;&#x1F3FB;&#x200D;&#x1F4BB;
 &#x1F468;&#x1F3FC;&#x200D;&#x1F4BB;
