@@ -136,8 +136,8 @@ print_contact_links <- function(responses, i){
   twitter_url <- paste0("https://twitter.com/", gsub(" *@ *", "", row[,"Twitter handle"]))
   paste0("[<i class='fa fa-twitter'/>](", twitter_url,")")}else{NULL}
 
-  github <- if(!is.na(row[,"GitHub username"])){
-  github_url <- paste0("https://github.com/", gsub(" *@ *", "", row[,"GitHub username"]))
+  github <- if(!is.na(row[,"GitHub username (to open issues on GitHub if needed)"])){
+  github_url <- paste0("https://github.com/", gsub(" *@ *", "", row[,"GitHub username (to open issues on GitHub if needed)"]))
   paste0("[<i class='fa fa-github'/>](", github_url,")")}else{NULL}
 
   feedback <- if(row[, "Would you like to receive a copy of any feedback on the paper?"] == "Yes"){
