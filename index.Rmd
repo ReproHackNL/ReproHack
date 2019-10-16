@@ -56,6 +56,9 @@ _It's imperative to note that  **ReproHacks are by no means an attempt to critic
 
 _We strive to make this event open and inclusive to all. As such we ask you to read our [Code of Conduct](https://docs.carpentries.org/topic_folders/policies/code-of-conduct.html). By participating, you are expected to uphold this code._
 
+
+<br>
+
 <br>
 
 ### **Join the event and reproduce &#x267B;&#xFE0F;**
@@ -64,8 +67,6 @@ _We strive to make this event open and inclusive to all. As such we ask you to r
 
 
 _Join us at the ReproHack and get working with other people’s material._
-
-<br>
 
 ###### Benefits to participants:
 
@@ -93,8 +94,16 @@ library("shiny")
  wellPanel(a("Register", class = "btn btn-primary btn-md",
           href = params$registration_url))
 ```
-***
 
+
+
+<br>
+
+<br>
+
+<br>
+
+<br>
 
 ### **Propose a paper &#x1F4DC;**
 
@@ -185,17 +194,15 @@ for(i in 1:nrow(responses)){
 }
 ```
 
-***
 
 
+<br>
 
+<br>
 
+<br>
 
-
-
-
-
-
+<br>
 
 ### **Program &#x1F4C5;**
 
@@ -218,3 +225,20 @@ for(i in 1:nrow(responses)){
 
 
 16:30 Drinks and bites &#x1F37B;
+
+
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+## Find us:
+
+
+`r icon:: fa("paper-plane", colour ="#09754a")` reprohack.nl@gmail.com
+<br>
+`r icon:: fa("twitter", colour = "#09754a")` [ReproHackNL](https://twitter.com/ReproHackNL)
