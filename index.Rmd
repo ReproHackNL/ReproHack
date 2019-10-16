@@ -56,9 +56,6 @@ _It's imperative to note that  **ReproHacks are by no means an attempt to critic
 
 _We strive to make this event open and inclusive to all. As such we ask you to read our [Code of Conduct](https://docs.carpentries.org/topic_folders/policies/code-of-conduct.html). By participating, you are expected to uphold this code._
 
-
-<br>
-
 <br>
 
 ### **Join the event and reproduce &#x267B;&#xFE0F;**
@@ -95,13 +92,6 @@ library("shiny")
           href = params$registration_url))
 ```
 
-
-
-<br>
-
-<br>
-
-<br>
 
 <br>
 
@@ -195,14 +185,8 @@ for(i in 1:nrow(responses)){
 ```
 
 
-
 <br>
 
-<br>
-
-<br>
-
-<br>
 
 ### **Program &#x1F4C5;**
 
@@ -227,14 +211,8 @@ for(i in 1:nrow(responses)){
 16:30 Drinks and bites &#x1F37B;
 
 
-
 <br>
 
-<br>
-
-<br>
-
-<br>
 
 ## Find us:
 
