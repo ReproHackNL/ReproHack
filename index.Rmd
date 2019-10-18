@@ -17,6 +17,10 @@ params:
   submission_url: https://docs.google.com/forms/d/1BwCNsO5FFp_n9eYJJcujmQ1YdJKYp-5gIqL4zH0u3H8/edit
   reprohack_repo_url: https://github.com/ReproHackNL/ReproHack
 ---
+```{r, include=FALSE}
+twit_icon <- icon:: fa("twitter", colour = "#09754a")
+```
+
 ```{r, echo=FALSE}
 openstreetmaps_location_url <- paste0("https://www.openstreetmap.org/?mlat=",
                                       params$latitude,
@@ -135,7 +139,7 @@ print_contact_links <- function(responses, i){
   row <- responses[i, ]
   twitter <- if(!is.na(row[,"Twitter handle"])){
   twitter_url <- paste0("https://twitter.com/", gsub(" *@ *", "", row[,"Twitter handle"]))
-  paste0("[<i class='fa fa-twitter'/>](", twitter_url,")")}else{NULL}
+  icon::fa("twitter") }else{NULL}
 
   github <- if(!is.na(row[,"GitHub username (to open issues on GitHub if needed)"])){
   github_url <- paste0("https://github.com/", gsub(" *@ *", "", row[,"GitHub username (to open issues on GitHub if needed)"]))
@@ -146,7 +150,7 @@ print_contact_links <- function(responses, i){
   public <- if(row[,"Can feedback on your paper be made public?"] == "Yes"){
     "<i class='fa fa-globe'/>"}else{NULL}
 
-  return(paste(twitter, github, feedback, public))
+  return(paste(twitter,feedback, public))
 }
 ```
 
@@ -216,6 +220,7 @@ for(i in 1:nrow(responses)){
 
 ## Find us:
 
+<i class='fa fa-twitter'/>
 
 `r icon:: fa("paper-plane", colour ="#09754a")` reprohack.nl@gmail.com
 <br>
