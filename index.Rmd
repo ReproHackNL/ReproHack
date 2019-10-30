@@ -155,11 +155,12 @@ print_contact_links <- function(responses, i){
 ```
 
 ```{r, message=FALSE, results='asis', warning=FALSE,  echo=FALSE}
-
+library(lubridate)
 responses_gs <- gs_title("ReproHackNL: Propose a paper to reproduce (Responses)")
 responses <- gs_read(responses_gs)
 
-responses <- responses %>% arrange(Timestamp)
+responses <- responses %>% 
+  arrange(Timestamp)
 
 if(nrow(responses) > 0){
 
@@ -219,8 +220,6 @@ for(i in 1:nrow(responses)){
 
 
 ## Find us:
-
-<i class='fa fa-twitter'/>
 
 `r icon:: fa("paper-plane", colour ="#09754a")` reprohack.nl@gmail.com
 <br>
