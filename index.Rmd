@@ -138,19 +138,19 @@ library(dplyr)
 print_contact_links <- function(responses, i){
   row <- responses[i, ]
   twitter <- if(!is.na(row[,"Twitter handle"])){
-  twitter_url <- paste0("https://twitter.com/", gsub(" *@ *", "", row[,"Twitter handle"]))
-  icon::fa("twitter") }else{NULL}
+twitter_url <- paste0("https://twitter.com/", gsub(" *@ *", "", row[,"Twitter handle"]))
+  paste0("[twitter](", twitter_url,")")}else{NULL}
 
   github <- if(!is.na(row[,"GitHub username (to open issues on GitHub if needed)"])){
   github_url <- paste0("https://github.com/", gsub(" *@ *", "", row[,"GitHub username (to open issues on GitHub if needed)"]))
-  paste0("[<i class='fa fa-github'/>](", github_url,")")}else{NULL}
+  paste0("[github]('github_url')")}else{NULL}
 
   feedback <- if(row[, "Would you like to receive a copy of any feedback on the paper?"] == "Yes"){
     "<i class='fa fa-comment-dots'/>"}else{NULL}
   public <- if(row[,"Can feedback on your paper be made public?"] == "Yes"){
     "<i class='fa fa-globe'/>"}else{NULL}
 
-  return(paste(twitter,feedback, public))
+  return(paste(twitter,github, feedback, public))
 }
 ```
 
@@ -199,7 +199,7 @@ for(i in 1:nrow(responses)){
 
 10:30 Welcome
 
-10:40 "Tools for Reproducible Research" by [Dr. Anna Krystalli](http://www.annakrystalli.com/)
+10:40 "Reproducibility: The value in the practice" by [Dr. Anna Krystalli](http://www.annakrystalli.com/)
 
 11:30 Forming groups and start hackathon &#x1F468;&#x1F3FB;&#x200D;&#x1F4BB;
 &#x1F468;&#x1F3FC;&#x200D;&#x1F4BB;
@@ -218,9 +218,15 @@ for(i in 1:nrow(responses)){
 
 <br>
 
+### **Feedback form**
 
-## Find us:
+Please fill this [feedback form](https://forms.gle/Qprt2cCpoeQPSwhZ7) after you reproduced the paper that you picked! 
+
+We want to emphasize that we appreciate all authors who have nominated their papers for the hackathon, and so we expect that any feedback and criticism on authors’ work is expressed in a *constructive*, friendly and respectful manner. 
+
+## **Find us:**
 
 `r icon:: fa("paper-plane", colour ="#09754a")` reprohack.nl@gmail.com
 <br>
-`r icon:: fa("twitter", colour = "#09754a")` [ReproHackNL](https://twitter.com/ReproHackNL)
+`r icon:: fa("twitter", colour ="#09754a")`https://twitter.com/ReproHackNL
+
